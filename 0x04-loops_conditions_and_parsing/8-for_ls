@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script displays non-hidden files with name parts after the first dash
+
+for filename in *
+do
+  # Skip hidden files
+  if [[ "$filename" == .* ]]; then
+    continue
+  fi
+
+  # Cut everything before the first dash
+  cutname="${filename#*-}"
+  echo "$cutname"
+done
