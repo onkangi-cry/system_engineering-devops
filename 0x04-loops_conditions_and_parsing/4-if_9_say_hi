@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script checks if the input is 9 and says hi
+
+if [ "$1" -eq 9 ]; then
+  echo "Hi"
+fi
