@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A Bash script that displays the PID and process name for all bash-related processes (Windows-compatible)
+
+tasklist | grep bash | awk '{print $2, $1}'
