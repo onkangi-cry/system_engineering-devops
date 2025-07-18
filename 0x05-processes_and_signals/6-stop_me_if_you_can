@@ -1,0 +1,13 @@
+#!/bin/bash
+# Script to stop '4-to_infinity_and_beyond' using process substitution (no kill)
+
+pid=$(ps -ef | grep "[4]-to_infinity_and_beyond" | awk '{print $2}')
+
+if [ -n "$pid" ]; then
+  echo "Stopping process $pid using 'exec' and SIGINT..."
+
+  # Use Windows-compatible powershell to send Ctrl+C (SIGINT)
+  powershell.exe -Command "Stop-Process -Id $pid"
+else
+  echo "⚠️ No matching process found."
+fi
