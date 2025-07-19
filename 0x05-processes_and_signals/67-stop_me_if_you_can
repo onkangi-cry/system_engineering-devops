@@ -1,0 +1,10 @@
+#!/bin/bash
+# Task 7 stop script using saved PID file and SIGTERM
+
+if [ -f highlander_pid.txt ]; then
+  pid=$(cat highlander_pid.txt)
+  kill -SIGTERM "$pid"
+  echo "🛡️ SIGTERM sent to process $pid"
+else
+  echo "⚠️ PID file not found. Start 7-highlander first."
+fi

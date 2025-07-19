@@ -1,0 +1,11 @@
+#!/bin/bash
+# Task 7: SIGTERM-hardened loop with PID tracking
+
+trap 'echo "I am invincible!!!"' SIGTERM
+echo $$ > highlander_pid.txt
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+done
