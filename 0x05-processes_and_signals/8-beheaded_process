@@ -1,0 +1,10 @@
+#!/bin/bash
+# Task 8: SIGKILL the Highlander with accurate PID detection
+
+if [ -f highlander_pid.txt ]; then
+  pid=$(cat highlander_pid.txt)
+  kill -9 "$pid"
+  echo "💀 SIGKILL sent to process $pid — Highlander has been beheaded."
+else
+  echo "⚠️ PID file not found. Start 7-highlander first."
+fi
